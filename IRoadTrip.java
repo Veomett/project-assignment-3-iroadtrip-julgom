@@ -137,6 +137,15 @@ public class IRoadTrip {
                             }
                             
                             List<String> neighborAliases = handleAliases(neighborCountry);
+			    if(countriesMap.containsKey(neighborCountry)) {
+                            	for (String neighborAlias : neighborAliases) {
+                            		if(!countriesMap.get(neighborCountry).contains(neighborAlias)) {
+                            			countriesMap.get(neighborCountry).add(neighborAlias);
+                            		}                                       		
+                            	} 
+                            } else {
+                             	countriesMap.put(neighborCountry, neighborAliases);
+                            }	
 
                             String neighborCountryId = getStateIdForBorders(neighborCountry, neighborAliases);                              
                             
