@@ -123,7 +123,7 @@ public class IRoadTrip {
                     	aliasesMap.put(currentCountryId, aliases);
                     }
                 	
-                	if (parts.length > 1) {
+                    if (parts.length > 1) {
                     	
                     	adjacencyList.put(currentCountryId, new HashMap<>());
                     	
@@ -152,9 +152,9 @@ public class IRoadTrip {
                                 }                                                                       	
                         		adjacencyList.get(currentCountryId).put(neighborCountryId, Integer.MAX_VALUE);
                                                  		                                	
-                            }                            	
+                              }                            	
                         }
-                	}
+                    }
                 }
             }
         } catch (Exception e) {
@@ -415,6 +415,7 @@ public class IRoadTrip {
     				if (upperCaseLetters.equals(alias)) {
     					return stateId;    					
     				} else if (upperCaseLetters.substring(0, upperCaseLetters.length() - 1).equals(alias)) {
+					aliasList.add(upperCaseLetters);
     					return stateId;
     				}
     				
@@ -522,12 +523,6 @@ public class IRoadTrip {
     		if (countryAliases.contains(inputCountry)) {
     			return true;
     		}
-    	}
-    	if(aliasesMap.containsKey(inputCountry)) {
-    		if(inputCountry.equals("USA")) {
-    			inputCountry = "US";
-    		}
-    		return true;
     	}
     	
         return false;
