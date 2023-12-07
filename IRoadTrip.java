@@ -209,19 +209,16 @@ public class IRoadTrip {
     	if(split.length == 1) {
     		String[] splitParts = country.split("\\(");
         	if(splitParts.length > 1) {
-        		
         		parts.add(splitParts[0].trim());
         		parts.add(splitParts[1].substring(0, splitParts[1].length() - 1));
-        		parts.add(country);
-       		    
+        		
         	}
     	} else {
     		String[] splitParts = split[0].split("\\(");
     		if(splitParts.length > 1) {
     			parts.add(splitParts[0].trim() + " " + split[1].trim());
     			parts.add(splitParts[1].trim() + " " + split[1].trim());
-    			parts.add(country);
-  		
+    			
     		}
     	}
     	parts.add(country);
